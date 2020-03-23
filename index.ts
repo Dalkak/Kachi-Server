@@ -14,13 +14,6 @@ const typePack = new Pack({
 
 const timeout = 10000;
 
-const parseJSON = (msg: string) => {
-    try{
-        return JSON.parse(msg);
-    }catch{
-        return msg;
-    }
-};
 const heartbeat = (ws: WebSocket) => {
     clearTimeout((ws as any).killer);
     (ws as any).killer = setTimeout(() => {
