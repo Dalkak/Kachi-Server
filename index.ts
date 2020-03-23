@@ -8,7 +8,7 @@ import basic from "@dalkak/basic";
 
 const typePack = new Pack({
     types: {
-        server: Type.fromConstructor(WebSocket.Server),
+        server: Type.fromConstructor(WebSocket?.Server),
     }
 });
 
