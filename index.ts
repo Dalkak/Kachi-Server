@@ -1,7 +1,7 @@
 import * as WebSocket from "ws";
 
 import {
-    Extension, Block, Pack, Type, Variable,
+    Extension, Block, Pack, Type, Variable, Event,
 } from "dalkak";
 
 import basic from "@dalkak/basic";
@@ -44,12 +44,13 @@ export default new Extension({
                 ev: Event,
                 client: Variable,
                 val: Variable,
-            }) => {
+            }, project, local) => {
                 server.on("connection", ws => {
                     console.log("New Connection");
                     ws.on("message", (msg: string) => {
                         client.value = ws;
                         val.value = msg;
+                        ev.fire(project, local);
                     });
                     ws.on("close", () => {
                         clearInterval((ws as any).timer);
