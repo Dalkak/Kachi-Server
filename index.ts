@@ -27,7 +27,7 @@ export default new Extension({
     blocks: {
         newServer: new Block({
             name: "newServer",
-            template: "((새 서버): server)",
+            template: "(새 서버): server",
             pack: typePack,
             func: () => {
                 const wss = new WebSocket.Server({port: 8080});
