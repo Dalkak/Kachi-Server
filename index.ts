@@ -44,13 +44,13 @@ export default new Extension({
                 ev: Event,
                 client: Variable,
                 val: Variable,
-            }, project, local) => {
+            }, project, local, platform) => {
                 server.on("connection", ws => {
                     console.log("New Connection");
                     ws.on("message", (msg: string) => {
                         client.value = ws;
                         val.value = msg;
-                        ev.fire(project, local);
+                        ev.fire(project, local, platform);
                     });
                     ws.on("close", () => {
                         clearInterval((ws as any).timer);
