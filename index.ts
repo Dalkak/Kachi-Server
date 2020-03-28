@@ -29,8 +29,8 @@ export default new Extension({
             name: "newServer",
             template: "(새 서버): server",
             pack: typePack,
-            func: () => {
-                const wss = new WebSocket.Server({port: 8080});
+            func: (param, project, local, {backend}) => {
+                const wss = new WebSocket.Server({port: backend.port});
                 
                 return wss;
             }
