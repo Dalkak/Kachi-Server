@@ -24,7 +24,7 @@
     "@dalkak/basic": "^0.1.4",
     "@types/ws": "^7.2.0",
     "dalkak": "^0.9.1",
-    "microbundle": "^0.12.0-next.8",
+    "microbundle": "^0.13.1",
     "ws": "^7.2.1"
   }
 }
